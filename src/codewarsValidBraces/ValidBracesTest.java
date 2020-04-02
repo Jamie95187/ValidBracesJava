@@ -41,4 +41,12 @@ public class ValidBracesTest {
 	public void validBracesCheck_acceptanceCriteriaTwo_returnTrue() {
 		assertEquals(true, test.validBracesCheck("({[]})"));
 	}
+	
+	// Acceptance Criteria Three (}
+	
+	@Test
+	public void validBracesCheck_acceptanceCriteriaThree_returnFalse() {
+		assertEquals(false, test.validBracesCheck("(}"));
+	}
+	
 }
