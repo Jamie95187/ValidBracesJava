@@ -20,11 +20,16 @@ public class ValidBracesTest {
 
 	@Test
 	public void validBracesCheck_openClosedCurlyBraces_returnTrue() {
-		assertEquals(true, test.validBracesCheck("()"));
+		assertEquals(true, test.validBracesCheck("{}"));
 	}
 	
 	@Test
 	public void validBracesCheck_openClosedSquareAndCurlyBraces_returnTrue() {
-		assertEquals(true, test.validBracesCheck("[]()"));
+		assertEquals(true, test.validBracesCheck("[]{}"));
+	}
+	
+	@Test
+	public void validBracesCheck_openClosedParenthesesCurlyAndSquareBraces_returnTrue() {
+		assertEquals(true, test.validBracesCheck("(){}[]"));
 	}
 }
