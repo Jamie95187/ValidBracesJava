@@ -1,0 +1,3 @@
+module codewarsValidBraces {
+	requires junit;
+}
