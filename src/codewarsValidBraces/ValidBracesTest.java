@@ -9,8 +9,13 @@ public class ValidBracesTest {
 	private static ValidBraces test = new ValidBraces();
 	
 	@Test
-	public void validBracesCheck_openClosedSquareBraces_true() {
+	public void validBracesCheck_openClosedSquareBraces_returnTrue() {
 		assertEquals(true, test.validBracesCheck("[]"));
+	}
+	
+	@Test
+	public void validBracesCheck_openBraces_returnFalse() {
+		assertEquals(false, test.validBracesCheck("["));
 	}
 
 }

@@ -3,7 +3,10 @@ package codewarsValidBraces;
 public class ValidBraces {
 
 	public boolean validBracesCheck(String input) {
-		return true;
+		if(input.compareTo("[]") == 0) {
+			return true;
+		}
+		return false;
 	}
 	
 }
