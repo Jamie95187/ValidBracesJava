@@ -28,8 +28,17 @@ public class ValidBracesTest {
 		assertEquals(true, test.validBracesCheck("[]{}"));
 	}
 	
+	// Acceptance Criteria One (){}[]
+	
 	@Test
-	public void validBracesCheck_openClosedParenthesesCurlyAndSquareBraces_returnTrue() {
+	public void validBracesCheck_acceptanceCriteriaOne_returnTrue() {
 		assertEquals(true, test.validBracesCheck("(){}[]"));
+	}
+	
+	// Acceptance Criteria Two ({[]})
+	
+	@Test
+	public void validBracesCheck_acceptanceCriteriaTwo_returnTrue() {
+		assertEquals(true, test.validBracesCheck("({[]})"));
 	}
 }
