@@ -14,8 +14,12 @@ public class ValidBracesTest {
 	}
 	
 	@Test
-	public void validBracesCheck_openBraces_returnFalse() {
+	public void validBracesCheck_openSquareBraces_returnFalse() {
 		assertEquals(false, test.validBracesCheck("["));
 	}
 
+	@Test
+	public void validBracesCheck_openClosedCurlyBraces_returnTrue() {
+		assertEquals(true, test.validBracesCheck("()"));
+	}
 }
