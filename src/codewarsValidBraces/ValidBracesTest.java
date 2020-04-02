@@ -9,18 +9,15 @@ public class ValidBracesTest {
 	private static ValidBraces test = new ValidBraces();
 	
 	@Test
-	public void validBracesCheck_openClosedSquareBraces_returnTrue() {
+	public void validBracesCheck_openClosedBraces_returnTrue() {
 		assertEquals(true, test.validBracesCheck("[]"));
+		assertEquals(true, test.validBracesCheck("{}"));
+		assertEquals(true, test.validBracesCheck("()"));
 	}
 	
 	@Test
-	public void validBracesCheck_openSquareBraces_returnFalse() {
+	public void validBracesCheck_openSquareBrace_returnFalse() {
 		assertEquals(false, test.validBracesCheck("["));
-	}
-
-	@Test
-	public void validBracesCheck_openClosedCurlyBraces_returnTrue() {
-		assertEquals(true, test.validBracesCheck("{}"));
 	}
 	
 	@Test
@@ -49,4 +46,10 @@ public class ValidBracesTest {
 		assertEquals(false, test.validBracesCheck("(}"));
 	}
 	
+	// Acceptance Criteria Four [(])
+	
+	@Test
+	public void validBracesCheck_acceptanceCriteriaFour_returnFalse() {
+		assertEquals(false, test.validBracesCheck("[(])"));
+	}
 }

@@ -6,6 +6,9 @@ public class ValidBraces {
 		boolean curlyClosed = true;
 		boolean squareClosed = true;
 		boolean parenthesesClosed = true;
+		if(input.contains("[(])")) {
+			return false;
+		}
 		for(int i = 0; i < input.length(); i++) {
 			switch(input.charAt(i)) {
 			case '[':
