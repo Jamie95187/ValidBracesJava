@@ -25,6 +25,16 @@ public class ValidBracesTest {
 		assertEquals(true, test.validBracesCheck("[]{}"));
 	}
 	
+	@Test
+	public void validBracesCheck_onlyOpenBraces_returnTrue() {
+		assertEquals(false, test.validBracesCheck("[[((("));
+	}
+	
+	@Test
+	public void validBracesCheck_onlyCloseBraces_returnTrue() {
+		assertEquals(false, test.validBracesCheck(")))}}]"));
+	}
+	
 	// Acceptance Criteria One (){}[]
 	
 	@Test
