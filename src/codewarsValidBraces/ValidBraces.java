@@ -1,37 +1,41 @@
 package codewarsValidBraces;
 
-public class ValidBraces {
+import java.util.Stack;
 
+public class ValidBraces {
+	
+	//[]{}
 	public boolean validBracesCheck(String input) {
-		boolean curlyClosed = true;
-		boolean squareClosed = true;
-		boolean parenthesesClosed = true;
-		if(input.contains("[(])")) {
+		Stack<Character> braceStack = new Stack<Character>();
+		if(input.charAt(0) != '{' && input.charAt(0) != '[' && input.charAt(0) != '(') {
 			return false;
 		}
-		for(int i = 0; i < input.length(); i++) {
+		braceStack.push(input.charAt(0));
+		for(int i = 1; i < input.length(); i++) {
 			switch(input.charAt(i)) {
-			case '[':
-				squareClosed = !squareClosed;
-				break;
 			case ']':
-				squareClosed = !squareClosed;
-				break;
-			case '{':
-				curlyClosed = !curlyClosed;
+				if(braceStack.peek() == '(' || braceStack.peek() == '{') {
+					return false;
+				}
+				braceStack.pop();
 				break;
 			case '}':
-				curlyClosed = !curlyClosed;
-				break;
-			case '(':
-				parenthesesClosed = !parenthesesClosed;
+				if(braceStack.peek() == '(' || braceStack.peek() == '[') {
+					return false;
+				}
+				braceStack.pop();
 				break;
 			case ')':
-				parenthesesClosed = !parenthesesClosed;
+				if(braceStack.peek() == '{' || braceStack.peek() == '[') {
+					return false;
+				}
+				braceStack.pop();
 				break;
+			default:
+				braceStack.push(input.charAt(i));
 			}
 		}
-		if(curlyClosed == true && squareClosed == true && parenthesesClosed == true) {
+		if(braceStack.empty()) {
 			return true;
 		}
 		return false;
